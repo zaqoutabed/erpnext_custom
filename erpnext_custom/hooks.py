@@ -103,6 +103,12 @@ app_license = "MIT"
 #	}
 # }
 
+doc_events = {
+	"Attendance": {
+    	"validate": "erpnext_custom.doc_events.attendance_validate",
+	}
+}
+
 # Scheduled Tasks
 # ---------------
 
@@ -179,3 +185,17 @@ user_data_fields = [
 #	"erpnext_custom.auth.validate"
 # ]
 
+
+
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [
+            ["name", "in", [
+				"Attendance-hours",
+                "Attendance-check_out",
+                "Attendance-check_in"
+         ]]
+        ]
+    }
+]
