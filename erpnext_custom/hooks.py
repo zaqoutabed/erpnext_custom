@@ -2,11 +2,11 @@ from . import __version__ as app_version
 
 app_name = "erpnext_custom"
 app_title = "Erpnext Custom"
-app_publisher = "GSG"
-app_description = "GSG"
+app_publisher = "gsg std"
+app_description = "Gustom App"
 app_icon = "octicon octicon-file-directory"
 app_color = "grey"
-app_email = "gsg@gsg.com"
+app_email = "sgs@gsg.com"
 app_license = "MIT"
 
 # Includes in <head>

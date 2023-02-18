@@ -9,9 +9,9 @@ from erpnext_custom import __version__ as version
 setup(
 	name="erpnext_custom",
 	version=version,
-	description="GSG",
-	author="GSG",
-	author_email="gsg@gsg.com",
+	description="Gustom App",
+	author="gsg std",
+	author_email="sgs@gsg.com",
 	packages=find_packages(),
 	zip_safe=False,
 	include_package_data=True,

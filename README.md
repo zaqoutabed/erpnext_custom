@@ -1,6 +1,6 @@
 ## Erpnext Custom
 
-GSG
+Gustom App
 
 #### License
 
