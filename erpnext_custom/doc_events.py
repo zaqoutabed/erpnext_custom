@@ -19,7 +19,7 @@ def sales_invoice_validate(doc, method):
 
 
 def validate_pos_payments(doc):
-    if doc.is_pos == 0:
+    if doc.is_pos == 0 or (doc.is_pos == 1 and flt(doc.grand_total) <= 0):
         return
     if len(doc.payments) <= 0:
         frappe.throw("Please add at least one payment")
