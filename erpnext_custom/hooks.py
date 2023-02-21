@@ -106,6 +106,9 @@ app_license = "MIT"
 doc_events = {
 	"Attendance": {
     	"validate": "erpnext_custom.doc_events.attendance_validate",
+	},
+    "Sales Invoice": {
+    	"validate": "erpnext_custom.doc_events.sales_invoice_validate",
 	}
 }
 
@@ -194,7 +197,8 @@ fixtures = [
             ["name", "in", [
 				"Attendance-hours",
                 "Attendance-check_out",
-                "Attendance-check_in"
+                "Attendance-check_in",
+                "Sales Invoice Item-notes"
          ]]
         ]
     }
