@@ -16,6 +16,7 @@ def attendance_validate(doc, method):
 def sales_invoice_validate(doc, method):
     validate_pos_payments(doc)
     update_sales_invoice_remarks(doc)
+    check_discounts(doc)
 
 
 def validate_pos_payments(doc):
@@ -49,3 +50,13 @@ def get_clean_notes(notes):
             if notes and len(notes) > 0
         ]
     )
+
+def check_discounts(doc):
+    allow_discount = frappe.get_value("Customer", doc.customer, "allow_discount")
+    if allow_discount == 1:
+        return
+    if doc.discount_amount > 0 or doc.additional_discount_percentage > 0:
+        frappe.msgprint("Customer {0} does not allow discount".format(doc.customer))
+        doc.is_cash_or_non_trade_discount = 0
+        doc.additional_discount_percentage = 0
+        doc.discount_amount = 0
