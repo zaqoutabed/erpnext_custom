@@ -32,6 +32,10 @@ app_license = "MIT"
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+    "Quotation" : "public/js/quotation.js",
+    "Sales Invoice" : "public/js/sales_invoice.js"
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -90,7 +94,9 @@ app_license = "MIT"
 # override_doctype_class = {
 # 	"ToDo": "custom_app.overrides.CustomToDo"
 # }
-
+override_doctype_class = {
+	"Purchase Order": "erpnext_custom.overrides.CustomPurchaseOrder"
+}
 # Document Events
 # ---------------
 # Hook on document methods and events
@@ -199,6 +205,7 @@ fixtures = [
                     "Attendance-check_out",
                     "Attendance-check_in",
                     "Sales Invoice Item-notes",
+                    "Customer-allow_discount",
                 ],
             ]
         ],
