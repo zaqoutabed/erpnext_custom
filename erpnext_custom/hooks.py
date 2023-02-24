@@ -94,7 +94,9 @@ doctype_js = {
 # override_doctype_class = {
 # 	"ToDo": "custom_app.overrides.CustomToDo"
 # }
-
+override_doctype_class = {
+	"Purchase Order": "erpnext_custom.overrides.CustomPurchaseOrder"
+}
 # Document Events
 # ---------------
 # Hook on document methods and events
