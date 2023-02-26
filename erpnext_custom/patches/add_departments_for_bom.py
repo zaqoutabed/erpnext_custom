@@ -21,7 +21,7 @@ def execute():
         else:
             department = frappe.new_doc("Department")
             department.company = company
-            department.department_name = "BOM Department 2"
+            department.department_name = "BOM Department"
             department.flags.ignore_mandatory = True
             department.insert()
             department = department.name
