@@ -33,8 +33,9 @@ app_license = "MIT"
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 doctype_js = {
-    "Quotation" : "public/js/quotation.js",
-    "Sales Invoice" : "public/js/sales_invoice.js"
+    "Quotation": "public/js/quotation.js",
+    "Sales Invoice": "public/js/sales_invoice.js",
+    "Item": "public/js/item.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -95,7 +96,7 @@ doctype_js = {
 # 	"ToDo": "custom_app.overrides.CustomToDo"
 # }
 override_doctype_class = {
-	"Purchase Order": "erpnext_custom.overrides.CustomPurchaseOrder"
+    "Purchase Order": "erpnext_custom.overrides.CustomPurchaseOrder"
 }
 # Document Events
 # ---------------
@@ -115,6 +116,9 @@ doc_events = {
     },
     "Sales Invoice": {
         "validate": "erpnext_custom.doc_events.sales_invoice_validate",
+    },
+    "Material Request": {
+        "on_submit": "erpnext_custom.doc_events.add_requested_items_to_stock",
     },
 }
 
@@ -206,6 +210,7 @@ fixtures = [
                     "Attendance-check_in",
                     "Sales Invoice Item-notes",
                     "Customer-allow_discount",
+                    "BOM-department",
                 ],
             ]
         ],
