@@ -210,6 +210,7 @@ fixtures = [
                     "Attendance-check_in",
                     "Sales Invoice Item-notes",
                     "Customer-allow_discount",
+                    "BOM-department",
                 ],
             ]
         ],
