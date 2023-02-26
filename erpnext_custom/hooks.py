@@ -117,6 +117,9 @@ doc_events = {
     "Sales Invoice": {
         "validate": "erpnext_custom.doc_events.sales_invoice_validate",
     },
+    "Material Request": {
+        "on_submit": "erpnext_custom.doc_events.add_requested_items_to_stock",
+    },
 }
 
 # Scheduled Tasks
