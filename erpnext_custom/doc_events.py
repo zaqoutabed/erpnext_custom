@@ -52,6 +52,7 @@ def get_clean_notes(notes):
         ]
     )
 
+
 def check_discounts(doc):
     allow_discount = frappe.get_value("Customer", doc.customer, "allow_discount")
     if allow_discount == 1:
